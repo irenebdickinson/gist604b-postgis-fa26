@@ -137,6 +137,9 @@ WHERE name = 'Coney Island';
 -- Hint: Use the nyc_streets table
 -- Hint: ORDER BY ST_Length(geom) DESC OR use the alias length_meters
 -- Hint: Use LIMIT 5
-
+SELECT name, ST_Length(geom) AS length_meters
+FROM nyc_streets
+ORDER BY length_meters DESC
+LIMIT 5;
 
 
