@@ -75,5 +75,11 @@ ORDER BY name;
 
 -- TODO: Write your query below
 
-
+SELECT SUM(popn_total) AS total_population
+FROM nyc_census_blocks
+WHERE ST_DWithin(
+        geom,
+        (SELECT geom FROM nyc_streets WHERE name = 'Queensboro Brg'),
+        50
+      );
 
