@@ -10,6 +10,9 @@
 
 -- TODO: Write your query below
 
+SELECT ST_AsText(geom) AS queensboro
+FROM nyc_streets
+WHERE name = 'Queensboro Brg';
 
 
 
