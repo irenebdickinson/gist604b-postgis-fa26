@@ -67,6 +67,11 @@ ORDER BY neighborhood_name;
 
 -- TODO: Write your query below
 
+SELECT SUM(cb.popn_total) AS total_population
+FROM nyc_census_blocks AS cb
+JOIN nyc_neighborhoods AS n
+  ON ST_Intersects(cb.geom, n.geom)
+WHERE n.name = 'Financial District';
 
 
 
